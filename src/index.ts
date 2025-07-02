@@ -23,7 +23,7 @@ program
 program
   .command('chat')
   .description('Start an interactive chat session')
-  .option('-m, --model <model>', 'Model to use', 'llama-3.1-70b-versatile')
+  .option('-m, --model <model>', 'Model to use', 'llama-3.3-70b-versatile')
   .option('-s, --system <prompt>', 'System prompt')
   .option('--no-stream', 'Disable streaming responses')
   .action(async (options) => {
@@ -101,7 +101,7 @@ program
 program
   .command('ask <question>')
   .description('Ask a single question')
-  .option('-m, --model <model>', 'Model to use', 'llama-3.1-70b-versatile')
+  .option('-m, --model <model>', 'Model to use', 'llama-3.3-70b-versatile')
   .action(async (question, options) => {
     const config = await loadConfig();
     const client = new GroqClient(config.apiKey);

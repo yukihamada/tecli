@@ -33,7 +33,7 @@ export async function loadConfig(): Promise<Config> {
 
   const defaultConfig: Config = {
     apiKey: process.env.GROQ_API_KEY || '',
-    defaultModel: 'llama-3.1-70b-versatile',
+    defaultModel: 'llama-3.3-70b-versatile',
     maxTokens: 4096,
     temperature: 0.7,
     streamingEnabled: true,
