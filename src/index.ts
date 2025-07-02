@@ -15,6 +15,11 @@ marked.use(markedTerminal() as any);
 
 const program = new Command();
 
+// If no command is provided, default to chat
+if (process.argv.length === 2) {
+  process.argv.push('chat');
+}
+
 program
   .name('te')
   .description('Ultra-fast AI CLI powered by Groq Cloud')
@@ -174,5 +179,10 @@ program
       console.error(chalk.red('Error:'), error);
     }
   });
+
+// If no command is provided, default to chat
+if (process.argv.length === 2) {
+  process.argv.push('chat');
+}
 
 program.parse();

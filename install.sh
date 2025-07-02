@@ -36,6 +36,17 @@ npm run build
 echo "🔗 Creating global command..."
 npm link
 
+# Check if PATH includes npm bin directory
+NPM_BIN=$(npm bin -g)
+if [[ ":$PATH:" != *":$NPM_BIN:"* ]]; then
+    echo ""
+    echo "⚠️  Warning: $NPM_BIN is not in your PATH"
+    echo ""
+    echo "Add this to your shell profile (~/.zshrc or ~/.bashrc):"
+    echo "export PATH=\"$NPM_BIN:\$PATH\""
+    echo ""
+fi
+
 # Create config directory
 mkdir -p ~/.tecli-config
 
